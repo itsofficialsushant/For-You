@@ -1,5 +1,5 @@
 <script>
-    document.querySelector('.custom-button').addEventListener('click', () => {
-        alert('Button Clicked!');
-    });
+document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button clicked!');
+});
 </script>
