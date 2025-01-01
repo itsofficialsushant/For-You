@@ -11,3 +11,72 @@
 .custom-button:hover {
     background-color: #00aab3; /* Darker blue on hover */
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.animated-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    width: 20ch; /* Controls the visible text length */
+    animation: typing 4s steps(20) infinite, blink 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 10px solid transparent;
+    border-image: linear-gradient(to bottom, red, white);
+    border-image-slice: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
