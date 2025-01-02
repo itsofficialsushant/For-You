@@ -8,6 +8,12 @@
     cursor: pointer; /* Pointer on hover */
     transition: background-color 0.3s ease; /* Smooth hover effect */
 }
+/* .custom-button:hover .stars {
+    display : block;
+    filter : drop-shadow(0 0 10px
+    #fffdef);
+} */
+
 .custom-button:hover {
     background-color: #00aab3; /* Darker blue on hover */
 }
@@ -79,4 +85,27 @@ body {
     font-size: 1em;
     color: #666;
     line-height: 1.5;
+}
+
+#app{
+    overflow : hidden;
+    color: #ffffff;
+    font-family: 'Montserrat';
+    sans-serif;
+    text-align: center;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+
+#app a {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+#app canvas {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 0;
 }
