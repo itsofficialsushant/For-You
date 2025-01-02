@@ -1,20 +1,21 @@
-<script>
-    import { particlesCursor } from 
-    'https://unpkg.com/threejs-toy@0.0.8/build/threejs-toys.module.cdn.min.js'
+<script type="module">
+        import { particlesCursor } from 'https://unpkg.com/threejs-toy@0.0.8/build/threejs-toys.module.cdn.min.js';
 
-    const pc = particlesCursor({
-        el: document.getElementById('app'),
-        gpgpuSize: 512, color: 0xfff,
-        colours: [0x00fffc, 0x00fffc],
-        coordScale: 0.5, pointSize: 2,
-        noiseIntensity: 0.005,
-        noiseTimeCoef: 0.0001,
-        pointDecay: 0.0025,
-        sleepRadiusX: 250,
-        sleepRadiusY: 250,
-        SleepTimeCoefX: 0.001,
-        SleepTimeCoefY: 0.002
-    });
+        const pc = particlesCursor({
+            el: document.getElementById('app'),
+            gpgpuSize: 512,
+            color: 0xfff,
+            colours: [0x00fffc, 0x00fffc],
+            coordScale: 0.5,
+            pointSize: 2,
+            noiseIntensity: 0.005,
+            noiseTimeCoef: 0.0001,
+            pointDecay: 0.0025,
+            sleepRadiusX: 250,
+            sleepRadiusY: 250,
+            sleepTimeCoefX: 0.001,
+            sleepTimeCoefY: 0.002
+        });
 
 
 
