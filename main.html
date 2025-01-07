@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Slider</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #eee;
+            font-family: Poppins;
+            font-size: 12px;
+        }
+
+        .carousel {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel .list .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0 0 0 0;
+        }
+
+        .carousel .list .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel .list .item .content {
+            position: absolute;
+            bottom: 20%;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 20px;
+            box-sizing: border-box;
+            color: #fff;
+            text-shadow: 0 5px 10px #0004;
+        }
+
+        .carousel .list .item .author {
+            font-weight: bold;
+            letter-spacing: 10px;
+        }
+
+        .carousel .list .item .title,
+        .carousel .list .item .topic {
+            font-size: 5em;
+            font-weight: bold;
+            line-height: 1.3em;
+        }
+
+        .carousel .list .item .topic {
+            color: #f1683a;
+        }
+
+        .carousel .list .item .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 130px);
+            grid-template-rows: 40px;
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .carousel .list .item .buttons button {
+            border: none;
+            background-color: #eee;
+            letter-spacing: 3px;
+            font-family: Poppins;
+            font-weight: 500;
+        }
+
+        .thumbnail {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .thumbnail .item {
+            width: 80px;
+            height: 120px;
+            position: relative;
+        }
+
+        .thumbnail .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .arrows {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .arrows button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #eee4;
+            border: none;
+            color: #fff;
+            font-family: monospace;
+            font-weight: bold;
+            transition: .5s;
+            transform: rotate(90deg);
+        }
+
+        .carousel .time {
+            position: absolute;
+            z-index: 1000;
+            width: 3px;
+            height: 0%;
+            background-color: #f1683a;
+            right: 0;
+            top: 0;
+        }
+
+        @keyframes runningTime {
+            from { height: 100% }
+            to { height: 0 }
+        }
+
+        @media screen and (max-width: 768px) {
+            .thumbnail {
+                right: 10px;
+                width: 60px;
+            }
+            
+            .thumbnail .item {
+                width: 50px;
+                height: 75px;
+            }
+            
+            .carousel .list .item .content {
+                bottom: 15%;
+                width: 100%;
+            }
+            
+            .carousel .list .item .content .title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="list">
+            <div class="item">
+                <img src="https://imgs.search.brave.com/6NSGDYNpUd03JHTlICauhq1r7UOubuXTvQlVa7r1-_M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9zbm93bWFuLXRh/a2luZy1hLXNlbGZp/ZS1mcmVlLWltYWdl/LmpwZWc_dz02MDAm/cXVhbGl0eT04MA" alt="Slide 1">
+                <div class="content">
+                    <div class="author">LUNDEV</div>
+                    <div class="title">DESIGN SLIDER</div>
+                    <div class="topic">ANIMAL</div>
+                    <div class="des">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="buttons">
+                        <button>SEE MORE</button>
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+        
+        <div class="thumbnail">
+            <div class="item">
+                <img src="https://imgs.search.brave.com/8yfPSsMO49cn9-0Vj50g5rGiunhod5wWK7EufWIGODg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNjAz/ODUxMDYwL3Bob3Rv/L3RoZS1kcmVhbS10/ZWFtLWF0LXlvdXIt/c2VydmljZS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9U2tv/WVZwSUs0QzJwMHFW/MWw5RjQ5RjBSMWxR/UGM5bGx4SHFwWjhW/NkhHcz0" alt="Thumbnail 1">
+            </div>
+            <!-- Add more thumbnails as needed -->
+        </div>
+
+        <div class="arrows">
+            <button id="prev">▲</button>
+            <button id="next">▼</button>
+        </div>
+        
+        <div class="time"></div>
+    </div>
+
+    <script>
+        let nextDom = document.getElementById('next');
+        let prevDom = document.getElementById('prev');
+        let carouselDom = document.querySelector('.carousel');
+        let SliderDom = carouselDom.querySelector('.carousel .list');
+        let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+        let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+        let timeDom = document.querySelector('.carousel .time');
+
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+
+        let timeRunning = 3000;
+        let timeAutoNext = 7000;
+
+        nextDom.onclick = function() {
+            showSlider('next');
+        }
+
+        prevDom.onclick = function() {
+            showSlider('prev');
+        }
+
+        let runTimeOut;
+        let runNextAuto = setTimeout(() => {
+            next.click();
+        }, timeAutoNext);
+
+        function showSlider(type) {
+            let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+            let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+            
+            if(type === 'next') {
+                SliderDom.appendChild(SliderItemsDom[0]);
+                thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+                carouselDom.classList.add('next');
+            } else {
+                SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+                thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+                carouselDom.classList.add('prev');
+            }
+            
+            clearTimeout(runTimeOut);
+            runTimeOut = setTimeout(() => {
+                carouselDom.classList.remove('next');
+                carouselDom.classList.remove('prev');
+            }, timeRunning);
+            
+            clearTimeout(runNextAuto);
+            runNextAuto = setTimeout(() => {
+                next.click();
+            }, timeAutoNext);
+        }
+
+        carouselDom.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        });
+
+        carouselDom.addEventListener('touchmove', (e) => {
+            touchEndY = e.touches[0].clientY;
+        });
+
+        carouselDom.addEventListener('touchend', () => {
+            if (touchStartY - touchEndY > 50) {
+                nextDom.click();
+            } else if (touchEndY - touchStartY > 50) {
+                prevDom.click();
+            }
+        });
+    </script>
+</body>
+</html>
