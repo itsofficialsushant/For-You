@@ -10,11 +10,13 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            background-color: #f4f4f4;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        /* Modal Styles */
         .modal {
-            display: flex; /* Make the modal visible by default */
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
@@ -22,7 +24,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             overflow-y: auto;
         }
 
@@ -31,28 +33,40 @@
             border-radius: 10px;
             padding: 20px;
             width: 90%;
-            max-width: 800px;
+            max-width: 1200px;
+            margin: 20px auto;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .close {
-            position: absolute;
+            position: sticky;
             top: 10px;
-            right: 20px;
+            float: right;
             font-size: 24px;
             cursor: pointer;
             color: black;
             background-color: lightgray;
             border-radius: 50%;
             padding: 2px 8px;
+            z-index: 1000;
         }
 
-        /* Gallery Grid */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            column-count: 3;
+            column-gap: 15px;
             margin-top: 20px;
+        }
+
+        .media {
+            break-inside: avoid;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .media:hover {
+            transform: scale(1.02);
         }
 
         .media img,
@@ -66,6 +80,18 @@
         .media video {
             background-color: black;
         }
+
+        @media screen and (max-width: 768px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery {
+                column-count: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,24 +102,174 @@
             <div class="gallery">
                 <!-- Images -->
                 <div class="media">
-                    <img src="image1.jpg" alt="Image 1">
+                    <img src="photos/Pictures/image1.JPG" alt="Image 1">
                 </div>
                 <div class="media">
-                    <img src="image2.jpg" alt="Image 2">
+                    <img src="photos/Pictures/image2.JPG" alt="Image 2">
                 </div>
                 <div class="media">
-                    <img src="image3.jpg" alt="Image 3">
+                    <img src="photos/Pictures/image3.JPG" alt="Image 3">
                 </div>
                 <div class="media">
-                    <img src="image4.jpg" alt="Image 4">
+                    <img src="photos/Pictures/image4.JPG" alt="Image 4">
                 </div>
                 <!-- Videos -->
                 <div class="media">
-                    <video src="video1.mp4" autoplay muted controls></video>
+                    <video src="photos/Videos/video1.MOV" autoplay muted controls></video>
                 </div>
                 <div class="media">
-                    <video src="video2.mp4" autoplay muted controls></video>
+                    <video src="photos/Videos/video2.MP4" autoplay muted controls></video>
                 </div>
+                <!-- <div class="media">
+                    <img src="photos/Pictures/image5.JPG" alt="Image 1">
+                </div>
+                <div class="media">
+                    <img src="photos/Pictures/image6.JPG" alt="Image 2">
+                </div>
+                <div class="media">
+                    <img src="photos/Pictures/image7.JPG" alt="Image 3">
+                </div>
+                <div class="media">
+                    <img src="photos/Pictures/image8.JPG" alt="Image 4">
+                </div> -->
+                <div class="media">
+                    <video src="photos/Videos/video3.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video4.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video5.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video6.MP4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video7.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video8.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video9.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video10.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video11.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video12.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video13.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video14.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video15.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video16.MP4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video17.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video18.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video19.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video20.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video21.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video22.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video23.MP4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video24.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video25.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video26.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video27.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video28.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video29.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video30.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video31.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video32.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video33.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video34.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video35.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video36.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video37.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video38.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video39.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video40.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video41.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video42.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video43.MOV" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video44.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video45.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video46.mp4" autoplay muted controls></video>
+                </div>
+                <div class="media">
+                    <video src="photos/Videos/video47.mp4" autoplay muted controls></video>
+                </div>
+                
+
+
             </div>
         </div>
     </div>
