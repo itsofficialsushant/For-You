@@ -87,9 +87,7 @@ header a{
     color: #eee;
 }
 /* thumbail */
-
-
-/* .thumbnail{
+.thumbnail{
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -122,47 +120,7 @@ header a{
 }
 .thumbnail .item .content .description{
     font-weight: 300;
-} */
-
-.thumbnail {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    width: max-content;
-    z-index: 100;
-    display: flex;
-    gap: 15px; /* Reduced gap for better spacing with smaller items */
 }
-.thumbnail .item {
-    width: 120px; /* Reduced width */
-    height: 180px; /* Reduced height */
-    flex-shrink: 0;
-    position: relative;
-}
-.thumbnail .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px; /* Adjusted for a proportional corner radius */
-}
-.thumbnail .item .content {
-    color: #fff;
-    position: absolute;
-    bottom: 8px; /* Slightly adjusted positioning */
-    left: 8px;
-    right: 8px;
-}
-.thumbnail .item .content .title {
-    font-weight: 500;
-    font-size: 14px; /* Adjusted font size */
-}
-.thumbnail .item .content .description {
-    font-weight: 300;
-    font-size: 12px; /* Adjusted font size */
-}
-
-
-
 /* arrows */
 .arrows{
     position: absolute;
@@ -354,6 +312,3 @@ header a{
         font-size: 30px;
     }
 }
-
-
-
