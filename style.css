@@ -9,7 +9,7 @@ body{
 a{
     text-decoration: none;
 }
-header{
+header {
     width: 1140px;
     max-width: 80%;
     margin: auto;
@@ -19,9 +19,35 @@ header{
     position: relative;
     z-index: 100;
 }
-header a{
-    color: #eee;
+
+header a {
+    color: #ff69b4;
     margin-right: 40px;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 0;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff1493;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.7),
+                0 0 20px rgba(255, 20, 147, 0.4);
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+header a:hover {
+    text-shadow: 0 0 5px #ff69b4;
+    color: #ff1493;
 }
 /* carousel */
 .carousel{
