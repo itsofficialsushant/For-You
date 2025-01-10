@@ -11,20 +11,23 @@ body {
     font-size: 12px;
 }
 
+/* Header styles */
 header {
     width: 1140px;
     max-width: 80%;
-    margin: 0 auto;  /* removed top margin */
+    margin: 0 auto;
     height: 40px;
     display: flex;
     align-items: center;
-    position: relative;
+    position: absolute;  /* Changed to absolute */
     z-index: 100;
-    padding-top: 15px;
-    background: transparent;  /* ensures header is transparent */
+    padding-top: 30px;
+    top: 20px;         /* Position from top */
+    left: 50%;         /* Center horizontally */
+    transform: translateX(-50%);  /* Center horizontally */
+    background: transparent;
 }
 
-/* Rest of your header styles remain the same */
 header a {
     color: #ff69b4;
     margin-right: 40px;
@@ -35,26 +38,13 @@ header a {
     font-weight: 500;
 }
 
-header a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #ff1493;
-    transition: width 0.5s ease;
-    box-shadow: 0 0 10px rgba(255, 20, 147, 0.7),
-                0 0 20px rgba(255, 20, 147, 0.4);
-}
-
-header a:hover::after {
-    width: 100%;
-}
-
-header a:hover {
-    text-shadow: 0 0 5px #ff69b4;
-    color: #ff1493;
+/* Carousel adjustment */
+.carousel {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0;  /* Remove negative margin */
 }
 /* carousel */
 .carousel{
