@@ -9,25 +9,37 @@ body{
 a{
     text-decoration: none;
 }
+/* Keep only this body style */
+body {
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+}
+
 header {
     width: 1140px;
     max-width: 80%;
-    margin: auto;
-    height: 50px;
+    margin: 0 auto;  /* removed top margin */
+    height: 40px;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 100;
+    padding-top: 15px;
+    background: transparent;  /* ensures header is transparent */
 }
 
+/* Rest of your header styles remain the same */
 header a {
     color: #ff69b4;
     margin-right: 40px;
     text-decoration: none;
     position: relative;
     padding: 5px 0;
-    font-size: 1.25rem;  /* Increased font size */
-    font-weight: 500;    /* Added medium font weight */
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 header a::after {
