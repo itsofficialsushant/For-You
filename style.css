@@ -27,7 +27,6 @@ header a {
     position: relative;
     padding: 5px 0;
 }
-
 header a::after {
     content: '';
     position: absolute;
@@ -40,11 +39,9 @@ header a::after {
     box-shadow: 0 0 10px rgba(255, 20, 147, 0.7),
                 0 0 20px rgba(255, 20, 147, 0.4);
 }
-
 header a:hover::after {
     width: 100%;
 }
-
 header a:hover {
     text-shadow: 0 0 5px #ff69b4;
     color: #ff1493;
