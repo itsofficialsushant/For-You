@@ -47,3 +47,19 @@ function showSlider(type){
         next.click();
     }, timeAutoNext)
 }
+
+const playMusicButton = document.getElementById('playMusicButton');
+const backgroundMusic = document.getElementById('backgroundMusic');
+
+// Add click event listener to the button
+playMusicButton.addEventListener('click', () => {
+    backgroundMusic.play()
+        .then(() => {
+            console.log("Music started playing.");
+            playMusicButton.textContent = "Playing 🎶"; // Update button text
+        })
+        .catch(error => {
+            console.error("Error playing audio:", error);
+            alert("Failed to play music. Check your browser settings or file path.");
+        });
+});

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Audio</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Click the button to enable audio playback:</p>
+        <button id="playButton">Play Audio</button>
+    </div>
+    <audio id="background-audio" loop>
+        <source src="Shreya Ghoshal - Dagabaaz Re ( Lyrics ) (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audio = document.getElementById('background-audio');
+
+        playButton.addEventListener('click', () => {
+            audio.play()
+                .then(() => {
+                    playButton.style.display = 'none'; // Hide button after playback starts
+                })
+                .catch(error => {
+                    console.error("Error playing audio:", error);
+                    alert("Audio playback failed. Check your browser's autoplay settings.");
+                });
+        });
+    </script>
+</body>
+</html>
